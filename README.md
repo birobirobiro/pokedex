@@ -24,7 +24,7 @@
 
 ## 🚧 Projeto
 
-Live Preview:
+Live Preview: https://pokedex-v02.vercel.app/
 
 Figma: https://www.figma.com/community/file/1017777159819192951
 
