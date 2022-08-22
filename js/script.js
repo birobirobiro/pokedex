@@ -35,10 +35,36 @@ const renderPokemon = async (pokemon) => {
 
     pokemonWeight.innerHTML = 'Peso: ' + (data.weight / 10) + 'kg'
 
-    pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    if (data.id >= 1 && data.id <= 649) {
+      pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    }
+
+    if (data.id >= 650 && data.id <= 721) {
+      pokemonImage.src = data['sprites']['versions']['generation-vi']['x-y']['front_default']
+      document.querySelector('.pokemon__image').style.width = '10%';
+      document.querySelector('.pokemon__image').style.height = '15%';
+      document.querySelector('.pokemon__image').style.bottom = '50%';
+    }
+
+    if (data.id >= 721 && data.id <= 809) {
+      pokemonImage.src = data['sprites']['versions']['generation-vii']['icons']['front_default'];
+      document.querySelector('.pokemon__image').style.width = '16%';
+      document.querySelector('.pokemon__image').style.height = '14%';
+      document.querySelector('.pokemon__image').style.bottom = '50%';
+    }
+
+    if (data.id >= 809 && data.id <= 905) {
+      pokemonImage.src = data['sprites']['versions']['generation-viii']['icons']['front_default'];
+      document.querySelector('.pokemon__image').style.width = '16%';
+      document.querySelector('.pokemon__image').style.height = '14%';
+      document.querySelector('.pokemon__image').style.bottom = '49.5%';
+    }
+
     input.value = '';
-    searchPokemon = data.id;
-  } else {
+    searchPokemon = data.id
+    return data.id
+  }
+  else {
     pokemonImage.style.display = 'none';
     pokemonName.innerHTML = 'Tente novamente';
     pokemonNumber.innerHTML = '';
